@@ -26,15 +26,21 @@ export const MenuAndSocialsWrapper = styled.div`
   gap: 8px;
 
   button {
+    font-family: "Messina Sans Mono", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.33;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     border: none;
     outline: none;
-    padding: 16px 8.5px;
-    background-color: var(--primary-color);
+    padding: 16px 6.5px;
     border-radius: 8px;
-    filter: saturate(10%);
+    position: relative;
+    overflow: hidden;
+    color: black;
+    background-color: var(--primary-color);
   }
 `;

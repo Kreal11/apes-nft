@@ -1,4 +1,4 @@
-import BurgerMenu from "../burger-menu/BurgerMenu";
+// import BurgerMenu from "../burger-menu/BurgerMenu";
 import SocialLinks from "../socialLinks/SocialLinks";
 import { HeaderTag, LogoNavLink, MenuAndSocialsWrapper } from "./Header.styled";
 import sprite from "/sprite.svg";

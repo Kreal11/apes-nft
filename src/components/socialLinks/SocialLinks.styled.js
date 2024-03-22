@@ -7,10 +7,17 @@ export const SocialLinksList = styled.ul`
   gap: 8px;
 
   li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 16px;
     background-color: var(--primary-color);
     border-radius: 8px;
     filter: saturate(10%);
+
+    a {
+      height: 16px;
+    }
   }
 
   svg {
