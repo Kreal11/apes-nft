@@ -1,7 +1,18 @@
+import { Route, Routes } from "react-router-dom";
 import "./styles/App.css";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/home/Home";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
-  return <>Hello</>;
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
 }
 
 export default App;
