@@ -23,7 +23,7 @@ const BurgerMenu = ({ closeModal }) => {
         </MenuAndSocialsWrapper>
       </BurgerHeaderWrapper>
       <NavAndRightsWrapper>
-        <BurgerNav />
+        <BurgerNav closeModal={closeModal} />
         <RightsReserved>© Yacht ape 2024 all rights reserved</RightsReserved>
       </NavAndRightsWrapper>
     </>

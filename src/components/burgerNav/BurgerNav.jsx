@@ -1,13 +1,28 @@
 import { BurgerNavLink, Nav } from "./BurgerNav.styled";
 
-const BurgerNav = () => {
+const BurgerNav = ({ closeModal }) => {
+  const handleScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      closeModal();
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleChooseSection = (event) => {
+    if (event.target.tagName === "A") {
+      const sectionId = event.target.getAttribute("href");
+      handleScrollToSection(sectionId);
+    }
+  };
+
   return (
-    <Nav>
-      <BurgerNavLink>About</BurgerNavLink>
-      <BurgerNavLink>M-Map</BurgerNavLink>
-      <BurgerNavLink>FAQ</BurgerNavLink>
-      <BurgerNavLink>Arts</BurgerNavLink>
-      <BurgerNavLink>Mint</BurgerNavLink>
+    <Nav onClick={handleChooseSection}>
+      <BurgerNavLink href="about">About</BurgerNavLink>
+      <BurgerNavLink href="m-map">M-Map</BurgerNavLink>
+      <BurgerNavLink href="faq">FAQ</BurgerNavLink>
+      <BurgerNavLink href="arts">Arts</BurgerNavLink>
+      <BurgerNavLink href="mint">Mint</BurgerNavLink>
     </Nav>
   );
 };
