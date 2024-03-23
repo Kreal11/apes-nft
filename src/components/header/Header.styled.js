@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const HeaderTag = styled.header`
   display: flex;
   justify-content: space-between;
+  position: relative;
 `;
 
 export const LogoNavLink = styled(NavLink)`
@@ -20,6 +21,8 @@ export const LogoNavLink = styled(NavLink)`
 `;
 
 export const MenuAndSocialsWrapper = styled.div`
+  position: absolute;
+  right: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
