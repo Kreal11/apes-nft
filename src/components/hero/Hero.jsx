@@ -5,6 +5,7 @@ import apeHeroTablet2x from "../../assets/images/hero/heroApe_tablet2x.png";
 import apeHeroDesktop1x from "../../assets/images/hero/heroApe_desktop1x.png";
 import apeHeroDesktop2x from "../../assets/images/hero/heroApe_desktop2x.png";
 import { useMediaQuery } from "react-responsive";
+import { HeroWrapper } from "./Hero.styled";
 
 const Hero = () => {
   const isMobile = useMediaQuery({
@@ -18,7 +19,7 @@ const Hero = () => {
   });
 
   return (
-    <div>
+    <HeroWrapper>
       <h2>diD yOu seE iT ?</h2>
       <h1>Yacht Apes</h1>
       <h2>Apes aRe eveRywhere</h2>
@@ -49,7 +50,7 @@ const Hero = () => {
         Yacht Ape is a collection of unique digital apes that you can own in NFT
         format
       </h3>
-    </div>
+    </HeroWrapper>
   );
 };
 
