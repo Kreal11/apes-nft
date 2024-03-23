@@ -8,7 +8,12 @@ export const HeaderTag = styled.header`
 `;
 
 export const LogoNavLink = styled(NavLink)`
+  display: inline-flex;
+  width: 48px;
+  height: 32px;
+
   svg {
+    ${({ $burger }) => $burger === "burger" && `fill: var(--default-color)`};
     width: 48px;
     height: 32px;
   }
@@ -24,7 +29,7 @@ export const MenuAndSocialsWrapper = styled.div`
   position: absolute;
   right: 0;
   gap: 8px;
-  ${({ $burger }) => $burger === "burger" && `right: 8px; top: 54px`};
+  ${({ $burger }) => $burger === "burger" && `position: static`};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,10 +39,10 @@ export const MenuAndSocialsWrapper = styled.div`
     ${({ $burger }) => $burger === "burger" && `padding: 16px 3.5px`};
     color: black;
     ${({ $burger }) => $burger === "burger" && `color: var(--default-color);`}
-    font-family: "Messina Sans Mono", sans-serif;
+    font-family: "Messina Sans Mono", monospace;
     font-size: 12px;
     font-weight: 600;
-    line-height: 1.33;
+    line-height: 1.16;
     display: inline-flex;
     justify-content: center;
     align-items: center;

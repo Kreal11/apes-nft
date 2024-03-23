@@ -17,7 +17,7 @@ export const StyledWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 54px 8px 24px;
+  padding: 62px 16px 80px;
   position: relative;
   background-color: #1c1c1c;
   overflow: hidden;
