@@ -11,6 +11,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #1e1e1e;
+  --accent-color: #dc3b5a;
+  --bg-color: #181818;
+  --bg-light-grey-color: rgba(30, 30, 30, 0.7);
+  --default-color: #ffffff;
+  --discord-color: #5a65f2;
 }
 
 h1,
@@ -31,6 +38,12 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  min-height: 100vh;
 }
 
 *,
