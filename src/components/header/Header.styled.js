@@ -35,8 +35,8 @@ export const MenuAndSocialsWrapper = styled.div`
   align-items: center;
 
   button {
-    padding: 16px 6.5px;
-    ${({ $burger }) => $burger === "burger" && `padding: 16px 3.5px`};
+    padding: 17px 8.5px;
+    ${({ $burger }) => $burger === "burger" && `padding: 17px 5px`};
     color: black;
     ${({ $burger }) => $burger === "burger" && `color: var(--default-color);`}
     font-family: "Messina Sans Mono", monospace;

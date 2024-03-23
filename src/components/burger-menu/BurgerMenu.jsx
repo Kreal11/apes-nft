@@ -1,14 +1,18 @@
 import BurgerNav from "../burgerNav/BurgerNav";
 import { LogoNavLink, MenuAndSocialsWrapper } from "../header/Header.styled";
 import SocialLinks from "../socialLinks/SocialLinks";
-import { BurgerHeaderWrapper } from "./BurgerMenu.styled";
+import {
+  BurgerHeaderWrapper,
+  NavAndRightsWrapper,
+  RightsReserved,
+} from "./BurgerMenu.styled";
 import sprite from "/sprite.svg";
 
 const BurgerMenu = ({ closeModal }) => {
   return (
     <>
       <BurgerHeaderWrapper>
-        <LogoNavLink $burger="burger" to="/">
+        <LogoNavLink $burger="burger" to="/" onClick={closeModal}>
           <svg>
             <use xlinkHref={`${sprite}#icon-logo-ape`} />
           </svg>
@@ -18,7 +22,10 @@ const BurgerMenu = ({ closeModal }) => {
           <SocialLinks burger="burger" />
         </MenuAndSocialsWrapper>
       </BurgerHeaderWrapper>
-      <BurgerNav />
+      <NavAndRightsWrapper>
+        <BurgerNav />
+        <RightsReserved>© Yacht ape 2024 all rights reserved</RightsReserved>
+      </NavAndRightsWrapper>
     </>
   );
 };
