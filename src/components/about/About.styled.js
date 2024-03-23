@@ -57,10 +57,10 @@ export const SecondTextBlock = styled.div`
 
 const moveLeft = keyframes`
   0% {
-    transform: translateX(90%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-90%);
+    transform: translateX(-100%);
   }
 `;
 
@@ -70,11 +70,12 @@ export const Banner = styled.div`
   padding-bottom: 9px;
 
   div {
-    animation: ${moveLeft} 6s linear infinite;
+    animation: ${moveLeft} 10s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
+    max-width: 957px;
 
     p {
       font-family: "Right Grotesk Compact", monospace;

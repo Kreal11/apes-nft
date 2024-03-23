@@ -78,6 +78,14 @@ const About = () => {
             <use xlinkHref={`${sprite}#icon-cross`} />
           </svg>
           <p>HAVE NO LIMITS</p>
+          <svg>
+            <use xlinkHref={`${sprite}#icon-cross`} />
+          </svg>
+          {/* <p>Break rules</p>
+          <svg>
+            <use xlinkHref={`${sprite}#icon-cross`} />
+          </svg>
+          <p>Destroy stereotypes</p> */}
         </div>
       </Banner>
     </AboutSection>
