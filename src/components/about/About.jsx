@@ -18,7 +18,7 @@ const About = () => {
   });
 
   return (
-    <div>
+    <section>
       <h2></h2>
       <p></p>
       <p></p>
@@ -43,7 +43,7 @@ const About = () => {
           <img src={aboutApeDesktop1x} alt="Ape" />
         </picture>
       )}
-    </div>
+    </section>
   );
 };
 
