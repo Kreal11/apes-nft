@@ -11,9 +11,8 @@ export const SocialLinksList = styled.ul`
     justify-content: center;
     align-items: center;
     padding: 16px;
-    background-color: var(--primary-color);
+    background-color: var(--bg-light-grey-color);
     border-radius: 8px;
-    filter: saturate(10%);
 
     a {
       height: 16px;

@@ -5,6 +5,7 @@ export const HeaderTag = styled.header`
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin-top: 8px;
 `;
 
 export const LogoNavLink = styled(NavLink)`
@@ -20,7 +21,8 @@ export const LogoNavLink = styled(NavLink)`
 
   &:hover {
     svg {
-      fill: var(--accent-color);
+      fill: var(--default-color);
+      ${({ $burger }) => $burger === "burger" && `fill: var(--accent-color)`};
     }
   }
 `;
@@ -28,6 +30,7 @@ export const LogoNavLink = styled(NavLink)`
 export const MenuAndSocialsWrapper = styled.div`
   position: absolute;
   right: 0;
+  top: -8px;
   gap: 8px;
   ${({ $burger }) => $burger === "burger" && `position: static`};
   display: flex;
@@ -52,6 +55,6 @@ export const MenuAndSocialsWrapper = styled.div`
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    background-color: var(--primary-color);
+    background-color: var(--bg-light-grey-color);
   }
 `;
