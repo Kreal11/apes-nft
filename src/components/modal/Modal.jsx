@@ -38,13 +38,13 @@ const Modal = ({ children, closeModal }) => {
     return ReactDOM.createPortal(
       <StyledWrapper onClick={handleBackDrop}>
         <ContentWrapper>
-          <StyledCloseButton
+          {/* <StyledCloseButton
             type="button"
             title="modal close button"
             onClick={closeModal}
           >
             Close
-          </StyledCloseButton>
+          </StyledCloseButton> */}
           {children}
         </ContentWrapper>
       </StyledWrapper>,

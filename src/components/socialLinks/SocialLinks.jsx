@@ -1,9 +1,9 @@
 import { SocialLinksList } from "./SocialLinks.styled";
 import sprite from "/sprite.svg";
 
-const SocialLinks = () => {
+const SocialLinks = ({ burger }) => {
   return (
-    <SocialLinksList>
+    <SocialLinksList $burger={burger}>
       <li>
         <a href="">
           <svg>

@@ -22,13 +22,18 @@ export const LogoNavLink = styled(NavLink)`
 
 export const MenuAndSocialsWrapper = styled.div`
   position: absolute;
-  right: 8px;
+  right: 0;
+  gap: 8px;
+  ${({ $burger }) => $burger === "burger" && `right: 8px; top: 54px`};
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
 
   button {
+    padding: 16px 6.5px;
+    ${({ $burger }) => $burger === "burger" && `padding: 16px 3.5px`};
+    color: black;
+    ${({ $burger }) => $burger === "burger" && `color: var(--default-color);`}
     font-family: "Messina Sans Mono", sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -39,11 +44,9 @@ export const MenuAndSocialsWrapper = styled.div`
     text-transform: uppercase;
     border: none;
     outline: none;
-    padding: 16px 6.5px;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    color: black;
     background-color: var(--primary-color);
   }
 `;

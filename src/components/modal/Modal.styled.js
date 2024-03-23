@@ -7,9 +7,9 @@ export const StyledWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(23, 23, 23, 0.6);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,16 +17,12 @@ export const StyledWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+  padding: 54px 8px 24px;
   position: relative;
   background-color: #1c1c1c;
-  border: 1px solid rgba(244, 244, 244, 0.3);
   overflow: hidden;
-  border-radius: 20px;
-  width: 335px;
-
-  @media screen and (min-width: ${tablet}) {
-    width: 474px;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 export const StyledCloseButton = styled.button`

@@ -23,5 +23,6 @@ export const SocialLinksList = styled.ul`
   svg {
     width: 16px;
     height: 16px;
+    ${({ $burger }) => $burger === "burger" && `fill: var(--default-color)`}
   }
 `;
