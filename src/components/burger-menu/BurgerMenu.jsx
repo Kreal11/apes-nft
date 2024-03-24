@@ -3,7 +3,7 @@ import { LogoNavLink, MenuAndSocialsWrapper } from "../header/Header.styled";
 import SocialLinks from "../socialLinks/SocialLinks";
 import {
   BurgerHeaderWrapper,
-  NavAndRightsWrapper,
+  OptionalWrapper,
   RightsReserved,
 } from "./BurgerMenu.styled";
 import sprite from "/sprite.svg";
@@ -22,10 +22,9 @@ const BurgerMenu = ({ closeModal }) => {
           <SocialLinks burger="burger" />
         </MenuAndSocialsWrapper>
       </BurgerHeaderWrapper>
-      <NavAndRightsWrapper>
-        <BurgerNav closeModal={closeModal} />
-        <RightsReserved>© Yacht ape 2024 all rights reserved</RightsReserved>
-      </NavAndRightsWrapper>
+      <BurgerNav closeModal={closeModal} />
+      <OptionalWrapper></OptionalWrapper>
+      <RightsReserved>© Yacht ape 2024 all rights reserved</RightsReserved>
     </>
   );
 };
