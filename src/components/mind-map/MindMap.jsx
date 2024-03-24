@@ -10,7 +10,7 @@ const MindMap = () => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
-    fetch("/src/data/mindData.json")
+    fetch("/data/mindData.json")
       .then((response) => response.json())
       .then((data) => setSlidesData(data))
       .catch((error) => console.error("Error fetching slides data:", error));
