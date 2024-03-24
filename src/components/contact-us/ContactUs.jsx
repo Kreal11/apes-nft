@@ -14,6 +14,8 @@ const ContactUs = () => {
   const [walletAddress, setWalletAddress] = useState("");
   const [discordError, setDiscordError] = useState("");
   const [walletError, setWalletError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const validateUsername = (value) => {
     if (value.trim() === "") {
@@ -22,7 +24,7 @@ const ContactUs = () => {
       setDiscordError("Wrong discord");
     } else if (!/^[a-zA-Z0-9@]*$/.test(value)) {
       setDiscordError("Wrong discord");
-    } else if ((value.match(/@/g) || []).length > 1) {
+    } else if (!/^@[^@]*$/.test(value)) {
       setDiscordError("Wrong discord");
     } else {
       setDiscordError("");
@@ -53,7 +55,21 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Дополнительная логика обработки формы
+    if (discordUsername.trim() === "") {
+      return setDiscordError("Wrong discord");
+    }
+    if (walletAddress.trim() === "") {
+      return setWalletError("Wrong address");
+    }
+
+    setSuccess(true);
+    setDisabled(true);
+    setDiscordUsername("");
+    setWalletAddress("");
+    setTimeout(() => {
+      setSuccess(false);
+      setDisabled(false);
+    }, 2000);
   };
 
   return (
@@ -66,11 +82,7 @@ const ContactUs = () => {
         Join the YACHT APE community to be one of the first to receive our
         limited edition NFT
       </ContactUsText>
-      <ContactForm
-        action=""
-        $discordError={discordError}
-        $walletError={walletError}
-      >
+      <ContactForm action="" onSubmit={handleSubmit}>
         <div>
           <svg>
             <use xlinkHref={`${sprite}#icon-logo-discord`} />
@@ -101,7 +113,7 @@ const ContactUs = () => {
           />
           <ErrorMessage $show={walletError}>{walletError}</ErrorMessage>
         </div>
-        <button>Mint</button>
+        <button disabled={disabled}>{success ? "Minted" : "Mint"}</button>
       </ContactForm>
     </ContactUsSection>
   );
