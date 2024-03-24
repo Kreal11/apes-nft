@@ -10,12 +10,15 @@ export const FAQHeader = styled.h2`
 `;
 
 export const QuestionWrapper = styled.div`
+  background-color: ${(props) =>
+    props.$isOpen ? "var(--primary-color)" : "transparent"};
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 216px;
   padding: 8px 8px 10px 8px;
   margin: 0 auto;
+  border-radius: 12px;
 
   h3 {
     font-family: "Right Grotesk Compact", monospace;
@@ -44,6 +47,15 @@ export const QuestionNumber = styled.p`
 `;
 
 export const QuestionHeaderWrapper = styled.div`
+  p {
+    color: ${(props) =>
+      props.$isOpen ? "var(--default-color)" : "var(--accent-color)"};
+  }
+
+  h3 {
+    color: ${(props) =>
+      props.$isOpen ? "var(--accent-color)" : "var(--default-color)"};
+  }
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -68,4 +80,11 @@ export const QuestionDescr = styled.p`
   font-weight: 400;
   line-height: 1.17;
   text-align: left;
+
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
+  height: ${(props) => (props.$isOpen ? "auto" : "0px")};
+
+  transition: visibility ${(props) => (props.$isOpen ? "0s" : "0.5s")} ease,
+    height ${(props) => (props.$isOpen ? "0s" : "0.5s")} ease;
 `;
