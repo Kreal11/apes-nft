@@ -1,18 +1,76 @@
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import {
   ContactForm,
   ContactUsSection,
   ContactUsText,
   CrossSvg,
+  ErrorMessage,
+  Input,
 } from "./ContactUs.styles";
 import sprite from "/sprite.svg";
 
 const ContactUs = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const [discordUsername, setDiscordUsername] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+  const [discordError, setDiscordError] = useState("");
+  const [walletError, setWalletError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
-  //   const submit = ({ discordUsername, walletAddress }) => {
-  //     reset();
-  //   };
+  const validateUsername = (value) => {
+    if (value.trim() === "") {
+      setDiscordError("Wrong discord");
+    } else if (/\s/.test(value)) {
+      setDiscordError("Wrong discord");
+    } else if (!/^[a-zA-Z0-9@]*$/.test(value)) {
+      setDiscordError("Wrong discord");
+    } else if (!/^@[^@]*$/.test(value)) {
+      setDiscordError("Wrong discord");
+    } else {
+      setDiscordError("");
+    }
+  };
+
+  const validateWalletAddress = (value) => {
+    if (value.trim() === "") {
+      setWalletError("Wrong address");
+    } else if (/\s/.test(value)) {
+      setWalletError("Wrong address");
+    } else if (!/^[a-zA-Z0-9]*$/.test(value)) {
+      setWalletError("Wrong address");
+    } else {
+      setWalletError("");
+    }
+  };
+
+  const handleUsernameChange = (e) => {
+    setDiscordUsername(e.target.value);
+    validateUsername(e.target.value);
+  };
+
+  const handleWalletAddressChange = (e) => {
+    setWalletAddress(e.target.value);
+    validateWalletAddress(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (discordUsername.trim() === "") {
+      return setDiscordError("Wrong discord");
+    }
+    if (walletAddress.trim() === "") {
+      return setWalletError("Wrong address");
+    }
+
+    setSuccess(true);
+    setDisabled(true);
+    setDiscordUsername("");
+    setWalletAddress("");
+    setTimeout(() => {
+      setSuccess(false);
+      setDisabled(false);
+    }, 2000);
+  };
 
   return (
     <ContactUsSection>
@@ -24,30 +82,38 @@ const ContactUs = () => {
         Join the YACHT APE community to be one of the first to receive our
         limited edition NFT
       </ContactUsText>
-      <ContactForm action="">
+      <ContactForm action="" onSubmit={handleSubmit}>
         <div>
           <svg>
             <use xlinkHref={`${sprite}#icon-logo-discord`} />
           </svg>
 
-          <input
+          <Input
             type="text"
             placeholder="@username"
-            {...register("discordUsername", { required: true })}
+            value={discordUsername}
+            onChange={handleUsernameChange}
+            $filled={discordUsername.trim() !== ""}
+            $error={discordError}
           />
+          <ErrorMessage $show={discordError}>{discordError}</ErrorMessage>
         </div>
         <div>
           <svg>
             <use xlinkHref={`${sprite}#icon-logo-metamask`} />
           </svg>
 
-          <input
+          <Input
             type="text"
             placeholder="Wallet address"
-            {...register("walletAddress", { required: true })}
+            value={walletAddress}
+            onChange={handleWalletAddressChange}
+            $filled={walletAddress.trim() !== ""}
+            $error={walletError}
           />
+          <ErrorMessage $show={walletError}>{walletError}</ErrorMessage>
         </div>
-        <button>Mint</button>
+        <button disabled={disabled}>{success ? "Minted" : "Mint"}</button>
       </ContactForm>
     </ContactUsSection>
   );
