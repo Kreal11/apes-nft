@@ -18,6 +18,16 @@ const Hero = () => {
     query: "(min-width: 1280px)",
   });
 
+  const scrollToMintSection = () => {
+    const section = document.getElementById("#mind-map");
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
   return (
     <HeroWrapper>
       <h2>diD yOu seE iT ?</h2>
@@ -45,7 +55,7 @@ const Hero = () => {
         </picture>
       )}
 
-      <button>Meet Apes</button>
+      <button onClick={scrollToMintSection}>Meet Apes</button>
       <h3>
         Yacht Ape is a collection of unique digital apes that you can own in NFT
         format

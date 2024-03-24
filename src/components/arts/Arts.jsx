@@ -29,7 +29,7 @@ const Arts = () => {
   };
 
   return (
-    <ArtsSection>
+    <ArtsSection id="#arts">
       <h2>Collection</h2>
       <Slider {...settings} ref={sliderRef}>
         {images.map((image, index) => (
