@@ -1,5 +1,6 @@
 import { SocialLinksList } from "./SocialLinks.styled";
 import sprite from "/sprite.svg";
+import PropTypes from "prop-types";
 
 const SocialLinks = ({ burger }) => {
   return (
@@ -30,3 +31,7 @@ const SocialLinks = ({ burger }) => {
 };
 
 export default SocialLinks;
+
+SocialLinks.propTypes = {
+  burger: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import { BurgerNavLink, Nav } from "./BurgerNav.styled";
+import PropTypes from "prop-types";
 
 const BurgerNav = ({ closeModal }) => {
   const handleScrollToSection = (sectionId) => {
@@ -31,3 +32,7 @@ const BurgerNav = ({ closeModal }) => {
 };
 
 export default BurgerNav;
+
+BurgerNav.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+};
