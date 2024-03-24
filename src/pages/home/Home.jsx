@@ -1,5 +1,6 @@
 import About from "../../components/about/About";
 import Container from "../../components/container/Container";
+import FAQ from "../../components/faq/FAQ";
 import Header from "../../components/header/Header";
 import Hero from "../../components/hero/Hero";
 import MindMap from "../../components/mind-map/MindMap";
@@ -16,6 +17,7 @@ const Home = () => {
       </Container>
       <About />
       <MindMap />
+      <FAQ />
     </div>
   );
 };
