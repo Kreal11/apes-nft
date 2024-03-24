@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const BurgerHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  position: relative;
+  margin-top: 8px;
 `;
 
 export const RightsReserved = styled.p`
@@ -15,8 +17,4 @@ export const RightsReserved = styled.p`
   text-transform: uppercase;
   max-width: 216px;
   margin: 0 auto;
-`;
-
-export const OptionalWrapper = styled.div`
-  height: 240px;
 `;

@@ -73,7 +73,7 @@ const ContactUs = () => {
   };
 
   return (
-    <ContactUsSection>
+    <ContactUsSection id="#mint">
       <h2>Are you in?</h2>
       <CrossSvg>
         <use xlinkHref={`${sprite}#icon-cross`} />

@@ -25,6 +25,7 @@ export const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const StyledCloseButton = styled.button`

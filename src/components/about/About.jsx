@@ -28,7 +28,7 @@ const About = () => {
   });
 
   return (
-    <AboutSection>
+    <AboutSection id="#about">
       <Container $about="about">
         <AboutHeader>
           a Story that started with{" "}

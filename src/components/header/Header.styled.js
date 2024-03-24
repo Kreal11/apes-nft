@@ -32,7 +32,6 @@ export const MenuAndSocialsWrapper = styled.div`
   right: 0;
   top: -8px;
   gap: 8px;
-  ${({ $burger }) => $burger === "burger" && `position: static`};
   display: flex;
   flex-direction: column;
   align-items: center;

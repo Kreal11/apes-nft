@@ -35,7 +35,7 @@ const MindMap = () => {
   };
 
   return (
-    <MindMapSection>
+    <MindMapSection id="#mind-map">
       <MindHeader>Mind map</MindHeader>
       {slidesData.length > 0 && (
         <Slider {...settings} ref={sliderRef}>

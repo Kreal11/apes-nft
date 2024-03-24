@@ -19,7 +19,7 @@ const FAQ = () => {
   };
 
   return (
-    <FAQSection>
+    <FAQSection id="#faq">
       <FAQHeader>FAQ</FAQHeader>
       <QuestionWrapper $isOpen={isOpen[0]}>
         <QuestionHeaderWrapper

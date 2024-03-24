@@ -3,26 +3,29 @@ import { BurgerNavLink, Nav } from "./BurgerNav.styled";
 const BurgerNav = ({ closeModal }) => {
   const handleScrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
+
     if (section) {
       closeModal();
-      section.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 250);
     }
   };
 
   const handleChooseSection = (event) => {
     if (event.target.tagName === "A") {
-      const sectionId = event.target.getAttribute("href");
+      const sectionId = event.target.getAttribute("id");
       handleScrollToSection(sectionId);
     }
   };
 
   return (
     <Nav onClick={handleChooseSection}>
-      <BurgerNavLink href="about">About</BurgerNavLink>
-      <BurgerNavLink href="m-map">M-Map</BurgerNavLink>
-      <BurgerNavLink href="faq">FAQ</BurgerNavLink>
-      <BurgerNavLink href="arts">Arts</BurgerNavLink>
-      <BurgerNavLink href="mint">Mint</BurgerNavLink>
+      <BurgerNavLink id="#about">About</BurgerNavLink>
+      <BurgerNavLink id="#mind-map">M-Map</BurgerNavLink>
+      <BurgerNavLink id="#faq">FAQ</BurgerNavLink>
+      <BurgerNavLink id="#arts">Arts</BurgerNavLink>
+      <BurgerNavLink id="#mint">Mint</BurgerNavLink>
     </Nav>
   );
 };
