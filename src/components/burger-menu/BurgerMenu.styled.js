@@ -17,9 +17,6 @@ export const RightsReserved = styled.p`
   margin: 0 auto;
 `;
 
-export const NavAndRightsWrapper = styled.div`
-  height: 440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+export const OptionalWrapper = styled.div`
+  height: 240px;
 `;
