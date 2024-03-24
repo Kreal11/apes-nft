@@ -3,6 +3,7 @@ import { LogoNavLink, MenuAndSocialsWrapper } from "../header/Header.styled";
 import SocialLinks from "../socialLinks/SocialLinks";
 import { BurgerHeaderWrapper, RightsReserved } from "./BurgerMenu.styled";
 import sprite from "/sprite.svg";
+import PropTypes from "prop-types";
 
 const BurgerMenu = ({ closeModal }) => {
   return (
@@ -25,3 +26,7 @@ const BurgerMenu = ({ closeModal }) => {
 };
 
 export default BurgerMenu;
+
+BurgerMenu.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+};

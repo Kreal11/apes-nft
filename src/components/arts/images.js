@@ -15,6 +15,7 @@ import apeArt_14 from "../../assets/images/arts/apeArt_14.png";
 
 const images = [
   apeArt_11,
+  apeArt_1,
   apeArt_2,
   apeArt_3,
   apeArt_4,

@@ -1,5 +1,6 @@
 import { SlideWrapper } from "./Slide.styled";
 import sprite from "/sprite.svg";
+import PropTypes from "prop-types";
 
 const Slide = ({ title, content, lastEl }) => {
   return (
@@ -23,3 +24,9 @@ const Slide = ({ title, content, lastEl }) => {
 };
 
 export default Slide;
+
+Slide.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  lastEl: PropTypes.number.isRequired,
+};

@@ -1,4 +1,5 @@
 import { ArtWrapper } from "./Art.styled";
+import PropTypes from "prop-types";
 
 const Art = ({ image, index }) => {
   return (
@@ -9,3 +10,8 @@ const Art = ({ image, index }) => {
 };
 
 export default Art;
+
+Art.propTypes = {
+  image: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};
