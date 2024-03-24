@@ -4,6 +4,7 @@ export const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 60px;
 
   picture {
     display: flex;
@@ -55,14 +56,14 @@ export const SecondTextBlock = styled.div`
   }
 `;
 
-const moveLeft = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
+// const moveLeft = keyframes`
+//   0% {
+//     transform: translateX(100%);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// `;
 
 export const Banner = styled.div`
   background-color: var(--accent-color);
@@ -70,7 +71,7 @@ export const Banner = styled.div`
   padding-bottom: 9px;
 
   div {
-    animation: ${moveLeft} 10s linear infinite;
+    /* animation:  10s linear infinite; */
     display: flex;
     justify-content: center;
     align-items: center;
