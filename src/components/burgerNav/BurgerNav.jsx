@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 const BurgerNav = ({ closeModal }) => {
   const handleScrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-
     if (section) {
       closeModal();
       setTimeout(() => {
@@ -15,18 +14,18 @@ const BurgerNav = ({ closeModal }) => {
 
   const handleChooseSection = (event) => {
     if (event.target.tagName === "A") {
-      const sectionId = event.target.getAttribute("id");
+      const sectionId = event.target.getAttribute("section");
       handleScrollToSection(sectionId);
     }
   };
 
   return (
     <Nav onClick={handleChooseSection}>
-      <BurgerNavLink id="#about">About</BurgerNavLink>
-      <BurgerNavLink id="#mind-map">M-Map</BurgerNavLink>
-      <BurgerNavLink id="#faq">FAQ</BurgerNavLink>
-      <BurgerNavLink id="#arts">Arts</BurgerNavLink>
-      <BurgerNavLink id="#mint">Mint</BurgerNavLink>
+      <BurgerNavLink section="#about">About</BurgerNavLink>
+      <BurgerNavLink section="#mind-map">M-Map</BurgerNavLink>
+      <BurgerNavLink section="#faq">FAQ</BurgerNavLink>
+      <BurgerNavLink section="#arts">Arts</BurgerNavLink>
+      <BurgerNavLink section="#mint">Mint</BurgerNavLink>
     </Nav>
   );
 };
@@ -34,5 +33,5 @@ const BurgerNav = ({ closeModal }) => {
 export default BurgerNav;
 
 BurgerNav.propTypes = {
-  closeModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func,
 };
