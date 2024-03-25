@@ -46,5 +46,10 @@ export const BurgerNavLink = styled(NavLink)`
     color: var(--primary-color);
     width: 48px;
     height: 47.9px;
+
+    &:hover {
+      color: var(--default-color);
+      text-decoration: underline;
+    }
   }
 `;

@@ -58,6 +58,10 @@ export const Button = styled.button`
   position: relative;
   overflow: hidden;
   background-color: var(--bg-light-grey-color);
+  &:hover {
+    color: var(--default-color);
+    text-decoration: underline;
+  }
 
   @media screen and (min-width: ${tablet}) {
     padding: ${({ $isOpen }) => ($isOpen ? "17px 5px" : "17px 8.5px")};
