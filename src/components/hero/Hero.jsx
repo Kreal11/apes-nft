@@ -5,7 +5,14 @@ import apeHeroTablet2x from "../../assets/images/hero/heroApe_tablet2x.png";
 import apeHeroDesktop1x from "../../assets/images/hero/heroApe_desktop1x.png";
 import apeHeroDesktop2x from "../../assets/images/hero/heroApe_desktop2x.png";
 import { useMediaQuery } from "react-responsive";
-import { HeroWrapper } from "./Hero.styled";
+import {
+  HeroDescrWrapper,
+  HeroHeadersWrapper,
+  HeroWrapper,
+  Span1,
+  Span2,
+  Span3,
+} from "./Hero.styled";
 
 const Hero = () => {
   const isMobile = useMediaQuery({
@@ -30,22 +37,46 @@ const Hero = () => {
 
   return (
     <HeroWrapper>
-      <h2>diD yOu seE iT ?</h2>
-      <h1>Yacht Apes</h1>
-      <h2>Apes aRe eveRywhere</h2>
-
       {isMobile && (
-        <picture>
-          <source srcSet={`${apeHeroMobile1x} 1x, ${apeHeroMobile2x} 2x`} />
-          <img src={apeHeroMobile1x} alt="Ape" />
-        </picture>
+        <>
+          <h2>diD yOu seE iT ?</h2>
+          <h1>Yacht Apes</h1>
+          <h2>Apes aRe eveRywhere</h2>
+
+          <picture>
+            <source srcSet={`${apeHeroMobile1x} 1x, ${apeHeroMobile2x} 2x`} />
+            <img src={apeHeroMobile1x} alt="Ape" />
+          </picture>
+          <button onClick={scrollToMintSection}>Meet Apes</button>
+          <h3>
+            Yacht Ape is a collection of unique digital apes that you can own in
+            NFT format
+          </h3>
+        </>
       )}
 
       {isTablet && (
-        <picture>
-          <source srcSet={`${apeHeroTablet1x} 1x, ${apeHeroTablet2x} 2x`} />
-          <img src={apeHeroTablet1x} alt="Ape" />
-        </picture>
+        <>
+          <HeroHeadersWrapper>
+            <h2>diD yOu seE iT ?</h2>
+            <h2>Apes aRe eveRywhere</h2>
+          </HeroHeadersWrapper>
+          <h1>Yacht Apes</h1>
+          <picture>
+            <source srcSet={`${apeHeroTablet1x} 1x, ${apeHeroTablet2x} 2x`} />
+            <img src={apeHeroTablet1x} alt="Ape" />
+          </picture>
+          <HeroDescrWrapper>
+            <h3>
+              <Span1>
+                Yacht Ape is a <br />
+              </Span1>
+              <Span2>collection of unique digital apes that you can</Span2>
+              <Span3>own in NFT format</Span3>
+            </h3>
+            <button onClick={scrollToMintSection}>Meet Apes</button>
+          </HeroDescrWrapper>
+        </>
       )}
 
       {isDesktop && (
@@ -54,12 +85,6 @@ const Hero = () => {
           <img src={apeHeroDesktop1x} alt="Ape" />
         </picture>
       )}
-
-      <button onClick={scrollToMintSection}>Meet Apes</button>
-      <h3>
-        Yacht Ape is a collection of unique digital apes that you can own in NFT
-        format
-      </h3>
     </HeroWrapper>
   );
 };
