@@ -10,18 +10,12 @@ export const AboutSection = styled.section`
   margin-bottom: 60px;
 
   @media screen and (min-width: ${tablet}) {
-    position: relative;
+    display: flex;
   }
 
   picture {
     display: flex;
     justify-content: center;
-
-    @media screen and (min-width: ${tablet}) {
-      position: absolute;
-      bottom: 55px;
-      right: 80px;
-    }
   }
 `;
 
@@ -36,7 +30,7 @@ export const AboutHeader = styled.h2`
 
   @media screen and (max-width: 767px) {
     margin: 0 auto;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   span {
@@ -56,10 +50,10 @@ export const FirstTextBlock = styled.p`
   line-height: 1.19;
   text-align: right;
   max-width: 216px;
-  margin-bottom: 36px;
 
   @media screen and (max-width: 767px) {
     margin: 0 auto;
+    margin-bottom: 36px;
   }
 
   @media screen and (min-width: ${tablet}) {
@@ -74,11 +68,10 @@ export const SecondTextBlock = styled.div`
   line-height: 1.17;
   text-align: center;
   max-width: 216px;
-  margin: 0 auto;
-  margin-bottom: 40px;
 
   @media screen and (max-width: 767px) {
     margin: 0 auto;
+    margin-bottom: 40px;
   }
 
   svg {
@@ -99,6 +92,7 @@ export const SecondTextBlock = styled.div`
     font-size: 16px;
     max-width: 269px;
     margin-bottom: 36px;
+    line-height: 1.19;
   }
 `;
 
@@ -106,17 +100,16 @@ export const Banner = styled.div`
   background-color: var(--accent-color);
   padding-top: 6px;
   padding-bottom: 9px;
-  position: relative;
+  overflow: hidden;
 
   div {
-    position: absolute;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 24px;
+    min-width: 957px;
 
     p {
+      text-transform: uppercase;
       font-family: "Right Grotesk Compact", monospace;
       font-size: 36px;
       font-weight: 900;
@@ -133,16 +126,14 @@ export const Banner = styled.div`
 
 export const AboutBlock = styled.div`
   @media screen and (min-width: ${tablet}) {
-    display: flex;
-    gap: 48px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 68px;
     justify-content: center;
 
-    &:first-of-type {
-      margin-bottom: 68px;
-    }
-
     &:last-of-type {
-      max-width: 425px;
+      align-items: flex-end;
+      gap: 0px;
     }
   }
 `;
