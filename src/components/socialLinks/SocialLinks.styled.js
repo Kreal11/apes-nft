@@ -17,6 +17,13 @@ export const SocialLinksList = styled.ul`
     a {
       height: 16px;
     }
+
+    &:hover {
+      cursor: pointer;
+      svg {
+        fill: var(--default-color);
+      }
+    }
   }
 
   svg {
