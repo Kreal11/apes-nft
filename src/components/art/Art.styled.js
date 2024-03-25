@@ -12,6 +12,8 @@ export const ArtWrapper = styled.div`
 
   @media screen and (min-width: ${tablet}) {
     max-width: 284px;
+    ${({ $index }) => $index !== 0 && $index <= 13 && "margin-left: 24px;"}
+    ${({ $index }) => $index % 2 === 0 && $index <= 12 && "margin-left: auto;"}
   }
 
   img {

@@ -23,6 +23,5 @@ export const ArtsSection = styled.section`
 `;
 
 export const SliderWrapper = styled.div`
-  max-width: 616px;
   margin: 0 auto;
 `;
