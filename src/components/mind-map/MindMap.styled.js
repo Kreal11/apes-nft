@@ -40,6 +40,10 @@ export const SliderBtnWrapper = styled.div`
 
 export const MindMapSection = styled.section`
   margin-bottom: 60px;
+
+  @media screen and (min-width: ${tablet}) {
+    margin-bottom: 80px;
+  }
 `;
 
 export const TabletMindList = styled.ul`

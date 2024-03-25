@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
+
+const { tablet } = breakpoints;
 
 export const FAQHeader = styled.h2`
   font-family: "Right Grotesk Compact", monospace;
@@ -7,6 +10,12 @@ export const FAQHeader = styled.h2`
   line-height: 0.9;
   text-align: center;
   margin-bottom: 24px;
+
+  @media screen and (min-width: ${tablet}) {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 48px;
+  }
 `;
 
 export const QuestionWrapper = styled.div`
@@ -14,11 +23,19 @@ export const QuestionWrapper = styled.div`
     props.$isOpen ? "var(--primary-color)" : "transparent"};
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 10px;
   max-width: 216px;
   padding: 8px 8px 10px 8px;
   margin: 0 auto;
   border-radius: 12px;
+  position: relative;
+
+  @media screen and (min-width: ${tablet}) {
+    padding: 18px 16px 23px 0px;
+    max-width: 592px;
+    gap: 12px;
+  }
 
   h3 {
     font-family: "Right Grotesk Compact", monospace;
@@ -27,10 +44,12 @@ export const QuestionWrapper = styled.div`
     line-height: 1;
     text-align: left;
     max-width: 160px;
-  }
 
-  p {
-    max-width: 160px;
+    @media screen and (min-width: ${tablet}) {
+      font-size: 32px;
+      line-height: 1;
+      max-width: 339px;
+    }
   }
 `;
 
@@ -44,6 +63,10 @@ export const QuestionNumber = styled.p`
   font-weight: 400;
   line-height: 1.7;
   color: var(--accent-color);
+
+  @media screen and (min-width: ${tablet}) {
+    font-size: 16px;
+  }
 `;
 
 export const QuestionHeaderWrapper = styled.div`
@@ -60,6 +83,10 @@ export const QuestionHeaderWrapper = styled.div`
   justify-content: center;
   gap: 8px;
 
+  @media screen and (min-width: ${tablet}) {
+    gap: 21px;
+  }
+
   &:hover {
     p {
       color: var(--default-color);
@@ -74,7 +101,7 @@ export const QuestionHeaderWrapper = styled.div`
 export const QuestionDescr = styled.p`
   margin-left: 35px;
   text-transform: uppercase;
-
+  max-width: 160px;
   font-family: "Messina Sans Mono", monospace;
   font-size: 12px;
   font-weight: 400;
@@ -87,4 +114,29 @@ export const QuestionDescr = styled.p`
 
   transition: visibility ${(props) => (props.$isOpen ? "0s" : "0.5s")} ease,
     height ${(props) => (props.$isOpen ? "0s" : "0.5s")} ease;
+
+  @media screen and (min-width: ${tablet}) {
+    max-width: 339px;
+  }
+`;
+
+export const FAQImg = styled.img`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-16deg);
+  left: 20px;
+  width: 148px;
+  height: 183px;
+  border-radius: 16px;
+  transform: translateY(-50%);
+
+  /* Плавная ротация после открытия */
+  transform: ${(props) =>
+    props.$isOpen ? "translateY(-50%) rotate(-16deg)" : "translateY(-50%)"};
+
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
+
+  transition: visibility ${(props) => (props.$isOpen ? "0s" : "0.5s")} ease,
+    transform 1s ease;
 `;
