@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet, mobile } = breakpoints;
+const { tablet } = breakpoints;
 
 export const HeroWrapper = styled.section`
   display: flex;
@@ -22,7 +22,7 @@ export const HeroWrapper = styled.section`
 
     @media screen and (min-width: ${tablet}) {
       position: absolute;
-      z-index: 1;
+      z-index: 5;
       bottom: 0;
       left: 206px;
     }
@@ -46,7 +46,7 @@ export const HeroWrapper = styled.section`
       font-size: 92px;
       word-spacing: 1.7em;
       position: absolute;
-      z-index: 5;
+      z-index: 1;
       bottom: 170px;
       left: 70px;
     }
