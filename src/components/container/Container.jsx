@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { StyledContainer } from "./Container.styled";
 
 const Container = ({ children, $about }) => {
@@ -5,3 +6,8 @@ const Container = ({ children, $about }) => {
 };
 
 export default Container;
+
+Container.propTypes = {
+  children: PropTypes.node.isRequired,
+  $about: PropTypes.string,
+};
