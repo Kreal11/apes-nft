@@ -1,13 +1,29 @@
 import { useEffect, useRef, useState } from "react";
-import { MindHeader, MindMapSection, SliderBtnWrapper } from "./MindMap.styled";
+import {
+  MindHeader,
+  MindMapSection,
+  SliderBtnWrapper,
+  TabletMindList,
+} from "./MindMap.styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slide from "../slide/Slide";
+import { useMediaQuery } from "react-responsive";
+import MindSlide from "../slide/Slide";
 
 const MindMap = () => {
   const [slidesData, setSlidesData] = useState([]);
   const sliderRef = useRef(null);
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1279px)",
+  });
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1280px)",
+  });
 
   useEffect(() => {
     fetch("/data/mindData.json")
@@ -37,17 +53,26 @@ const MindMap = () => {
   return (
     <MindMapSection id="#mind-map">
       <MindHeader>Mind map</MindHeader>
-      {slidesData.length > 0 && (
-        <Slider {...settings} ref={sliderRef}>
-          {slidesData?.map((slide, index) => (
-            <Slide key={index} {...slide} lastEl={index} />
-          ))}
-        </Slider>
+      {isMobile && slidesData.length && (
+        <>
+          <Slider {...settings} ref={sliderRef}>
+            {slidesData?.map((slide, index) => (
+              <MindSlide key={index} {...slide} lastEl={index} />
+            ))}
+          </Slider>
+          <SliderBtnWrapper>
+            <button onClick={goToPrevSlide}>Prev</button>
+            <button onClick={goToNextSlide}>Next</button>
+          </SliderBtnWrapper>
+        </>
       )}
-      <SliderBtnWrapper>
-        <button onClick={goToPrevSlide}>Prev</button>
-        <button onClick={goToNextSlide}>Next</button>
-      </SliderBtnWrapper>
+      {isTablet && slidesData.length && (
+        <TabletMindList>
+          {slidesData?.map((slide, index) => (
+            <MindSlide key={index} {...slide} lastEl={index} />
+          ))}
+        </TabletMindList>
+      )}
     </MindMapSection>
   );
 };
