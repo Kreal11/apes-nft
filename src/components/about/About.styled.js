@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
 const { tablet } = breakpoints;
@@ -96,6 +96,15 @@ export const SecondTextBlock = styled.div`
   }
 `;
 
+const moveLeftOne = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
 export const Banner = styled.div`
   background-color: var(--accent-color);
   padding-top: 6px;
@@ -107,6 +116,8 @@ export const Banner = styled.div`
     align-items: center;
     gap: 24px;
     min-width: 957px;
+    white-space: nowrap;
+    animation: ${moveLeftOne} 10s linear infinite;
 
     p {
       text-transform: uppercase;
