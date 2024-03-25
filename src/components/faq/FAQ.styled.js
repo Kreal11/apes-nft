@@ -129,8 +129,6 @@ export const FAQImg = styled.img`
   height: 183px;
   border-radius: 16px;
   transform: translateY(-50%);
-
-  /* Плавная ротация после открытия */
   transform: ${(props) =>
     props.$isOpen ? "translateY(-50%) rotate(-16deg)" : "translateY(-50%)"};
 
