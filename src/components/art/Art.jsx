@@ -2,7 +2,6 @@ import { ArtWrapper } from "./Art.styled";
 import PropTypes from "prop-types";
 
 const Art = ({ image, $index }) => {
-  console.log($index);
   return (
     <ArtWrapper $index={$index}>
       <img src={image} alt={`Art ${$index + 1}`} />
