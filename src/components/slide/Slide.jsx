@@ -1,8 +1,16 @@
+import { useMediaQuery } from "react-responsive";
 import { SlideWrapper } from "./Slide.styled";
 import sprite from "/sprite.svg";
 import PropTypes from "prop-types";
 
-const Slide = ({ title, content, lastEl }) => {
+const MindSlide = ({ title, content, lastEl }) => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1279px)",
+  });
+
   return (
     <SlideWrapper $lastEl={lastEl}>
       {lastEl === 3 ? (
@@ -11,7 +19,14 @@ const Slide = ({ title, content, lastEl }) => {
             <use xlinkHref={`${sprite}#icon-up-right-arrow`} />
           </svg>
           <p>{content}</p>
-          <h3>{title}</h3>
+          {isMobile && <h3>Learn more in mind map</h3>}
+          {isTablet && (
+            <h3>
+              Learn <br />
+              more <br />
+              in mind map
+            </h3>
+          )}
         </a>
       ) : (
         <>
@@ -23,9 +38,9 @@ const Slide = ({ title, content, lastEl }) => {
   );
 };
 
-export default Slide;
+export default MindSlide;
 
-Slide.propTypes = {
+MindSlide.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   lastEl: PropTypes.number.isRequired,
