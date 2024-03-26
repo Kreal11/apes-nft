@@ -11,6 +11,11 @@ export const AboutSection = styled.section`
 
   @media screen and (min-width: ${tablet}) {
     display: flex;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    margin-bottom: 120px;
   }
 
   picture {
@@ -147,12 +152,20 @@ export const Banner = styled.div`
       animation: ${moveLeftOne} 10s linear infinite;
     }
 
+    @media screen and (min-width: ${tablet}) {
+      min-width: 1582px;
+    }
+
     p {
       text-transform: uppercase;
       font-family: "Right Grotesk Compact", monospace;
       font-size: 36px;
       font-weight: 900;
       line-height: 1;
+
+      @media screen and (min-width: ${desktop}) {
+        font-size: 64px;
+      }
     }
   }
 

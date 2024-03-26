@@ -10,6 +10,9 @@ const MindSlide = ({ title, content, lastEl }) => {
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1279px)",
   });
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1280px)",
+  });
 
   return (
     <SlideWrapper $lastEl={lastEl}>
@@ -20,7 +23,7 @@ const MindSlide = ({ title, content, lastEl }) => {
           </svg>
           <p>{content}</p>
           {isMobile && <h3>Learn more in mind map</h3>}
-          {isTablet && (
+          {(isTablet || isDesktop) && (
             <h3>
               Learn <br />
               more <br />

@@ -65,7 +65,7 @@ const MindMap = () => {
           </SliderBtnWrapper>
         </>
       )}
-      {isTablet && slidesData.length && (
+      {(isTablet || isDesktop) && slidesData.length && (
         <TabletMindList>
           {slidesData?.map((slide, index) => (
             <MindSlide key={index} {...slide} lastEl={index} />
