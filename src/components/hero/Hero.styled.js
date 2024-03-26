@@ -118,7 +118,7 @@ export const HeroWrapper = styled.section`
       }
     }
 
-    @media screen and (min-width: ${tablet}) {
+    @media screen and (min-width: ${desktop}) {
       padding: 16px 0px 20px 0px;
       font-size: 28px;
       line-height: 1.2;
