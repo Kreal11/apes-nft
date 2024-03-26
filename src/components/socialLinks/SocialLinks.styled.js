@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const SocialLinksList = styled.ul`
   display: flex;
@@ -22,14 +22,24 @@ export const SocialLinksList = styled.ul`
 
     a {
       height: 16px;
+
+      @media screen and (min-width: ${tablet}) {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     @media screen and (min-width: ${tablet}) {
+      padding: 12px;
       &:hover {
         svg {
           fill: var(--default-color);
         }
       }
+    }
+
+    @media screen and (min-width: ${desktop}) {
+      padding: 28px;
     }
   }
 
@@ -37,5 +47,10 @@ export const SocialLinksList = styled.ul`
     width: 16px;
     height: 16px;
     ${({ $burger }) => $burger === "burger" && `fill: var(--default-color)`}
+
+    @media screen and (min-width: ${tablet}) {
+      width: 24px;
+      height: 24px;
+    }
   }
 `;
