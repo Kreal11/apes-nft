@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const ContactUsSection = styled.section`
   margin-bottom: 60px;
@@ -10,9 +10,11 @@ export const ContactUsSection = styled.section`
   align-items: center;
 
   @media screen and (min-width: ${tablet}) {
-    font-size: 80px;
-    line-height: 1;
     margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    margin-bottom: 120px;
   }
 
   h2 {
@@ -29,6 +31,11 @@ export const ContactUsSection = styled.section`
       line-height: 1;
       margin-bottom: 40px;
     }
+
+    @media screen and (min-width: ${desktop}) {
+      font-size: 160px;
+      margin-bottom: 80px;
+    }
   }
 `;
 
@@ -39,6 +46,10 @@ export const CrossSvg = styled.svg`
 
   @media screen and (min-width: ${tablet}) {
     margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: ${tablet}) {
+    margin-bottom: 40px;
   }
 `;
 
@@ -56,12 +67,23 @@ export const ContactUsText = styled.p`
     max-width: 397px;
     margin-bottom: 24px;
   }
+
+  @media screen and (min-width: ${desktop}) {
+    max-width: 581px;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
 `;
 
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media screen and (min-width: ${desktop}) {
+    gap: 24px;
+  }
 
   div {
     display: flex;
@@ -77,6 +99,12 @@ export const ContactForm = styled.form`
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
     background-color: var(--primary-color);
+
+    @media screen and (min-width: ${desktop}) {
+      width: 64px;
+      height: 64px;
+      padding: 20px;
+    }
 
     &:first-of-type {
       fill: var(--discord-color);
@@ -101,6 +129,13 @@ export const MintButton = styled.button`
       color: ${({ $success, $error }) =>
         $success || $error ? "var(--default-color)" : "var(--primary-color)"};
     }
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 16px 0 20px 0;
+    border-radius: 12px;
   }
 `;
 
@@ -130,8 +165,19 @@ export const Input = styled.input`
   max-width: 168px;
   outline: none;
 
+  color: ${({ $error }) =>
+    $error ? "var(--accent-color)" : "var(--default-color)"};
+
   @media screen and (min-width: ${tablet}) {
     min-width: 200px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    padding: 22.5px 0px 22.5px 24px;
+    font-size: 16px;
+    line-height: 1.19;
+    max-height: 64px;
+    min-width: 333px;
   }
 `;
 
@@ -145,8 +191,14 @@ export const ErrorMessage = styled.p`
   text-transform: uppercase;
   position: absolute;
   right: 0;
-  bottom: -12px;
+  bottom: -14px;
 
   opacity: ${(props) => (props.$show ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
+
+  @media screen and (min-width: ${desktop}) {
+    font-size: 12px;
+    line-height: 1.17;
+    bottom: -18px;
+  }
 `;
