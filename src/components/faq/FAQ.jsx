@@ -22,6 +22,9 @@ const FAQ = () => {
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1279px)",
   });
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1279px)",
+  });
 
   const toggleAnswer = (index) => {
     const newIsOpen = isOpen.map((value, i) => (i === index ? !value : false));
@@ -34,7 +37,9 @@ const FAQ = () => {
     <FAQSection id="#faq">
       <FAQHeader>FAQ</FAQHeader>
       <QuestionWrapper $isOpen={isOpen[0]}>
-        {isTablet && <FAQImg src={apeFAQ_1} alt="Ape" $isOpen={isOpen[0]} />}
+        {(isTablet || isDesktop) && (
+          <FAQImg src={apeFAQ_1} alt="Ape" $isOpen={isOpen[0]} />
+        )}
         <QuestionHeaderWrapper
           onClick={() => toggleAnswer(0)}
           $isOpen={isOpen[0]}
@@ -49,7 +54,9 @@ const FAQ = () => {
         </QuestionDescr>
       </QuestionWrapper>
       <QuestionWrapper $isOpen={isOpen[1]}>
-        {isTablet && <FAQImg src={apeFAQ_2} alt="Ape" $isOpen={isOpen[1]} />}
+        {(isTablet || isDesktop) && (
+          <FAQImg src={apeFAQ_2} alt="Ape" $isOpen={isOpen[1]} />
+        )}
         <QuestionHeaderWrapper
           onClick={() => toggleAnswer(1)}
           $isOpen={isOpen[1]}
@@ -63,7 +70,9 @@ const FAQ = () => {
         </QuestionDescr>
       </QuestionWrapper>
       <QuestionWrapper $isOpen={isOpen[2]}>
-        {isTablet && <FAQImg src={apeFAQ_3} alt="Ape" $isOpen={isOpen[2]} />}
+        {(isTablet || isDesktop) && (
+          <FAQImg src={apeFAQ_3} alt="Ape" $isOpen={isOpen[2]} />
+        )}
         <QuestionHeaderWrapper
           onClick={() => toggleAnswer(2)}
           $isOpen={isOpen[2]}
@@ -77,7 +86,9 @@ const FAQ = () => {
         </QuestionDescr>
       </QuestionWrapper>
       <QuestionWrapper $isOpen={isOpen[3]}>
-        {isTablet && <FAQImg src={apeFAQ_4} alt="Ape" $isOpen={isOpen[3]} />}
+        {(isTablet || isDesktop) && (
+          <FAQImg src={apeFAQ_4} alt="Ape" $isOpen={isOpen[3]} />
+        )}
         <QuestionHeaderWrapper
           onClick={() => toggleAnswer(3)}
           $isOpen={isOpen[3]}
@@ -89,7 +100,9 @@ const FAQ = () => {
               OF AN NFT?
             </h3>
           )}
-          {isTablet && <h3>WHAT RIGHTS DO I HAVE AS AN OWNER OF AN NFT?</h3>}
+          {(isTablet || isDesktop) && (
+            <h3>WHAT RIGHTS DO I HAVE AS AN OWNER OF AN NFT?</h3>
+          )}
         </QuestionHeaderWrapper>
         <QuestionDescr $isOpen={isOpen[3]}>
           As an NFT owner, you can own, transfer, potentially access exclusive
