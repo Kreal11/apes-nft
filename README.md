@@ -15,7 +15,7 @@ Welcome! This is the landing page for purchasing Ape-NFT, where you can familiar
 3. Run the project: `npm run dev` or `yarn dev`
 4. Open your browser and navigate to `http://localhost:3000`
 
-You can also visit Live page, link on it located at top right of this repository.
+You can also visit the Live page, the link on it is located at the top right of this repository.
 
 ## Technologies
 
