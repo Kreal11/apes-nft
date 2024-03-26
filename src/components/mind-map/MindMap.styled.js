@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const MindHeader = styled.h2`
   font-family: "Right Grotesk Compact", monospace;
@@ -16,6 +16,11 @@ export const MindHeader = styled.h2`
     font-size: 80px;
     line-height: 1;
     margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    margin-bottom: 80px;
+    font-size: 160px;
   }
 `;
 
@@ -44,6 +49,10 @@ export const MindMapSection = styled.section`
   @media screen and (min-width: ${tablet}) {
     margin-bottom: 80px;
   }
+
+  @media screen and (min-width: ${desktop}) {
+    margin-bottom: 120px;
+  }
 `;
 
 export const TabletMindList = styled.ul`
@@ -52,4 +61,8 @@ export const TabletMindList = styled.ul`
   grid-template-columns: repeat(2, minmax(0, 284px));
   justify-content: center;
   gap: 24px;
+
+  @media screen and (min-width: ${desktop}) {
+    grid-template-columns: repeat(2, minmax(0, 504px));
+  }
 `;
