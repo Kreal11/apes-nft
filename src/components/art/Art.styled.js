@@ -33,7 +33,7 @@ export const ArtWrapper = styled.div`
       margin-bottom: 21px;
     }
 
-    @media screen and (min-width: ${tablet}) {
+    @media screen and (min-width: ${desktop}) {
       width: 240px;
       height: 280px;
       margin-bottom: 21px;
