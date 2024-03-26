@@ -122,6 +122,7 @@ export const HeroWrapper = styled.section`
       padding: 16px 0px 20px 0px;
       font-size: 28px;
       line-height: 1.2;
+      min-width: 337px;
     }
   }
 
@@ -161,11 +162,11 @@ export const HeroHeadersWrapper = styled.div`
   @media screen and (min-width: ${desktop}) {
     gap: 194px;
     left: 96px;
-    bottom: 206px;
+    bottom: 220px;
 
     h2 {
       &:last-of-type {
-        margin-left: 120px;
+        margin-left: 160px;
       }
     }
   }
@@ -182,7 +183,7 @@ export const HeroDescrWrapper = styled.div`
 
   @media screen and (min-width: ${desktop}) {
     right: 140px;
-    bottom: 81px;
+    bottom: 100px;
   }
 `;
 
