@@ -8,7 +8,6 @@ export const StyledContainer = styled.div`
     ${({ $about }) =>
       $about === "about" &&
       css`
-        /* padding: 0px 16px; */
         display: flex;
         justify-content: center;
         align-items: flex-end;

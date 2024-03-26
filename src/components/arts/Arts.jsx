@@ -7,7 +7,6 @@ import { useRef } from "react";
 import images from "./images";
 import Art from "../art/Art";
 import { useMediaQuery } from "react-responsive";
-import styled from "styled-components";
 
 const Arts = () => {
   const sliderRef = useRef(null);
@@ -17,9 +16,6 @@ const Arts = () => {
   });
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1279px)",
-  });
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1280px)",
   });
 
   const settings = {
@@ -75,9 +71,3 @@ const Arts = () => {
 };
 
 export default Arts;
-
-const CustomSlider = styled(Slider)`
-  .slick-slide:not(:first-child) {
-    margin-left: 24px; /* Расстояние между видимыми слайдами */
-  }
-`;
