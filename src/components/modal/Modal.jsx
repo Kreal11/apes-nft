@@ -1,10 +1,7 @@
 import ReactDOM from "react-dom";
 import { useCallback, useEffect } from "react";
-import {
-  ContentWrapper,
-  StyledCloseButton,
-  StyledWrapper,
-} from "./Modal.styled";
+import { ContentWrapper, StyledWrapper } from "./Modal.styled";
+import PropTypes from "prop-types";
 
 const rootModal = document.querySelector("#modal");
 
@@ -37,16 +34,7 @@ const Modal = ({ children, closeModal }) => {
   if (rootModal) {
     return ReactDOM.createPortal(
       <StyledWrapper onClick={handleBackDrop}>
-        <ContentWrapper>
-          {/* <StyledCloseButton
-            type="button"
-            title="modal close button"
-            onClick={closeModal}
-          >
-            Close
-          </StyledCloseButton> */}
-          {children}
-        </ContentWrapper>
+        <ContentWrapper>{children}</ContentWrapper>
       </StyledWrapper>,
       rootModal
     );
@@ -56,3 +44,8 @@ const Modal = ({ children, closeModal }) => {
 };
 
 export default Modal;
+
+Modal.propTypes = {
+  children: PropTypes.node.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};
