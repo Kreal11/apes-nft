@@ -10,7 +10,6 @@ export const HeroWrapper = styled.section`
   align-items: center;
   margin: 0 auto;
   margin-top: -13px;
-  /* position: relative; */
 
   @media screen and (min-width: ${tablet}) {
     flex-direction: row;
@@ -98,6 +97,10 @@ export const HeroWrapper = styled.section`
     @media screen and (min-width: ${tablet}) {
       width: 100%;
       border-radius: 12px;
+
+      &:hover {
+        color: var(--default-color);
+      }
     }
   }
 

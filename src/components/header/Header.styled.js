@@ -21,10 +21,12 @@ export const LogoNavLink = styled(NavLink)`
     height: 32px;
   }
 
-  &:hover {
-    svg {
-      fill: var(--default-color);
-      ${({ $burger }) => $burger === "burger" && `fill: var(--accent-color)`};
+  @media screen and (min-width: ${tablet}) {
+    &:hover {
+      svg {
+        fill: var(--default-color);
+        ${({ $burger }) => $burger === "burger" && `fill: var(--accent-color)`};
+      }
     }
   }
 `;
@@ -58,14 +60,17 @@ export const Button = styled.button`
   position: relative;
   overflow: hidden;
   background-color: var(--bg-light-grey-color);
-  &:hover {
-    color: var(--default-color);
-    text-decoration: underline;
-  }
+  ${({ $burger }) =>
+    $burger === "burger" && `background-color: var(--default-light-color)`};
 
   @media screen and (min-width: ${tablet}) {
-    padding: ${({ $isOpen }) => ($isOpen ? "17px 5px" : "17px 8.5px")};
+    padding: ${({ $isOpen }) => ($isOpen ? "17px 5px" : "17px 8.85px")};
     border-bottom-left-radius: ${({ $isOpen }) => ($isOpen ? "0px" : "8px")};
     border-top-left-radius: ${({ $isOpen }) => ($isOpen ? "0px" : "8px")};
+
+    &:hover {
+      color: var(--default-color);
+      text-decoration: underline;
+    }
   }
 `;

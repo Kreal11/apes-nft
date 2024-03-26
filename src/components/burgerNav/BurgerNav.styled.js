@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   line-height: 1.2;
   font-style: normal;
 
-  @media screen and (max-width: ${mobile}) {
+  @media screen and (max-width: 767px) {
     gap: 16px;
   }
 

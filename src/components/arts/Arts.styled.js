@@ -6,6 +6,10 @@ const { tablet } = breakpoints;
 export const ArtsSection = styled.section`
   margin-bottom: 60px;
 
+  @media screen and (min-width: ${tablet}) {
+    margin-bottom: 80px;
+  }
+
   h2 {
     font-family: "Right Grotesk Compact", monospace;
     font-size: 44px;

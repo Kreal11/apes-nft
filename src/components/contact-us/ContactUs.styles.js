@@ -1,10 +1,19 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
+
+const { tablet } = breakpoints;
 
 export const ContactUsSection = styled.section`
   margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: ${tablet}) {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 80px;
+  }
 
   h2 {
     font-family: "Right Grotesk Compact", monospace;
@@ -14,6 +23,12 @@ export const ContactUsSection = styled.section`
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 24px;
+
+    @media screen and (min-width: ${tablet}) {
+      font-size: 80px;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -21,6 +36,10 @@ export const CrossSvg = styled.svg`
   width: 36px;
   height: 36px;
   margin-bottom: 16px;
+
+  @media screen and (min-width: ${tablet}) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const ContactUsText = styled.p`
@@ -32,6 +51,11 @@ export const ContactUsText = styled.p`
   max-width: 216px;
   margin-bottom: 16px;
   text-transform: uppercase;
+
+  @media screen and (min-width: ${tablet}) {
+    max-width: 397px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const ContactForm = styled.form`
@@ -53,19 +77,30 @@ export const ContactForm = styled.form`
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
     background-color: var(--primary-color);
-  }
 
-  button {
-    font-family: "Right Grotesk Compact", monospace;
-    font-size: 16px;
-    font-weight: 900;
-    line-height: 1.19;
-    text-transform: uppercase;
-    padding: 10px 0 12px 0;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    border: none;
-    outline: none;
+    &:first-of-type {
+      fill: var(--discord-color);
+    }
+  }
+`;
+
+export const MintButton = styled.button`
+  font-family: "Right Grotesk Compact", monospace;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.19;
+  text-transform: uppercase;
+  padding: 10px 0 12px 0;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  @media screen and (min-width: ${tablet}) {
+    &:hover {
+      color: ${({ $success, $error }) =>
+        $success || $error ? "var(--default-color)" : "var(--primary-color)"};
+    }
   }
 `;
 
@@ -94,6 +129,10 @@ export const Input = styled.input`
   max-height: 48px;
   max-width: 168px;
   outline: none;
+
+  @media screen and (min-width: ${tablet}) {
+    min-width: 200px;
+  }
 `;
 
 export const ErrorMessage = styled.p`

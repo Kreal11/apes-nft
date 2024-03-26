@@ -117,7 +117,11 @@ export const Banner = styled.div`
     gap: 24px;
     min-width: 957px;
     white-space: nowrap;
-    animation: ${moveLeftOne} 10s linear infinite;
+    animation: ${moveLeftOne} 6s linear infinite;
+
+    @media screen and (min-width: ${tablet}) {
+      animation: ${moveLeftOne} 10s linear infinite;
+    }
 
     p {
       text-transform: uppercase;
