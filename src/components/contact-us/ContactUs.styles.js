@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
+
+const { tablet } = breakpoints;
 
 export const ContactUsSection = styled.section`
   margin-bottom: 60px;
@@ -54,18 +57,25 @@ export const ContactForm = styled.form`
     border-top-left-radius: 12px;
     background-color: var(--primary-color);
   }
+`;
 
-  button {
-    font-family: "Right Grotesk Compact", monospace;
-    font-size: 16px;
-    font-weight: 900;
-    line-height: 1.19;
-    text-transform: uppercase;
-    padding: 10px 0 12px 0;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    border: none;
-    outline: none;
+export const MintButton = styled.button`
+  font-family: "Right Grotesk Compact", monospace;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.19;
+  text-transform: uppercase;
+  padding: 10px 0 12px 0;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  @media screen and (min-width: ${tablet}) {
+    &:hover {
+      color: ${({ $success, $error }) =>
+        $success || $error ? "var(--default-color)" : "var(--primary-color)"};
+    }
   }
 `;
 

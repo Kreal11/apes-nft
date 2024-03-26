@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
+
+const { tablet } = breakpoints;
 
 export const SocialLinksList = styled.ul`
   display: flex;
@@ -7,21 +10,25 @@ export const SocialLinksList = styled.ul`
   gap: 8px;
 
   li {
+    cursor: pointer;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 16px;
     background-color: var(--bg-light-grey-color);
-    border-radius: 8px;
+    ${({ $burger }) =>
+      $burger === "burger" && `background-color: var(--default-light-color)`};
 
     a {
       height: 16px;
     }
 
-    &:hover {
-      cursor: pointer;
-      svg {
-        fill: var(--default-color);
+    @media screen and (min-width: ${tablet}) {
+      &:hover {
+        svg {
+          fill: var(--default-color);
+        }
       }
     }
   }

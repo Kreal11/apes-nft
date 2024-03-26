@@ -1,5 +1,9 @@
 import BurgerNav from "../burgerNav/BurgerNav";
-import { LogoNavLink, MenuAndSocialsWrapper } from "../header/Header.styled";
+import {
+  Button,
+  LogoNavLink,
+  MenuAndSocialsWrapper,
+} from "../header/Header.styled";
 import SocialLinks from "../socialLinks/SocialLinks";
 import { BurgerHeaderWrapper, RightsReserved } from "./BurgerMenu.styled";
 import sprite from "/sprite.svg";
@@ -15,7 +19,9 @@ const BurgerMenu = ({ closeModal }) => {
           </svg>
         </LogoNavLink>
         <MenuAndSocialsWrapper $burger="burger">
-          <button onClick={closeModal}>Close</button>
+          <Button onClick={closeModal} $burger="burger">
+            Close
+          </Button>
           <SocialLinks burger="burger" />
         </MenuAndSocialsWrapper>
       </BurgerHeaderWrapper>

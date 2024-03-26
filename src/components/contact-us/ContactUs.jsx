@@ -6,6 +6,7 @@ import {
   CrossSvg,
   ErrorMessage,
   Input,
+  MintButton,
 } from "./ContactUs.styles";
 import sprite from "/sprite.svg";
 
@@ -15,7 +16,6 @@ const ContactUs = () => {
   const [discordError, setDiscordError] = useState("");
   const [walletError, setWalletError] = useState("");
   const [success, setSuccess] = useState(false);
-  const [disabled, setDisabled] = useState(false);
 
   const validateUsername = (value) => {
     if (value.trim() === "") {
@@ -63,14 +63,24 @@ const ContactUs = () => {
     }
 
     setSuccess(true);
-    setDisabled(true);
     setDiscordUsername("");
     setWalletAddress("");
     setTimeout(() => {
       setSuccess(false);
-      setDisabled(false);
     }, 2000);
   };
+
+  const isSuccess = success;
+  const hasError = discordError || walletError;
+
+  let buttonText;
+  if (isSuccess) {
+    buttonText = "Minted";
+  } else if (hasError) {
+    buttonText = "Error";
+  } else {
+    buttonText = "Mint";
+  }
 
   return (
     <ContactUsSection id="#mint">
@@ -113,7 +123,9 @@ const ContactUs = () => {
           />
           <ErrorMessage $show={walletError}>{walletError}</ErrorMessage>
         </div>
-        <button disabled={disabled}>{success ? "Minted" : "Mint"}</button>
+        <MintButton $success={success} $error={discordError || walletError}>
+          {buttonText}
+        </MintButton>
       </ContactForm>
     </ContactUsSection>
   );
