@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const AboutSection = styled.section`
   display: flex;
@@ -41,6 +41,11 @@ export const AboutHeader = styled.h2`
     font-size: 60px;
     max-width: 269px;
   }
+
+  @media screen and (min-width: ${desktop}) {
+    font-size: 120px;
+    max-width: 538px;
+  }
 `;
 
 export const FirstTextBlock = styled.p`
@@ -58,6 +63,12 @@ export const FirstTextBlock = styled.p`
 
   @media screen and (min-width: ${tablet}) {
     max-width: 275px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    font-size: 24px;
+    line-height: 1.2;
+    max-width: 409px;
   }
 `;
 
@@ -82,6 +93,12 @@ export const SecondTextBlock = styled.div`
     @media screen and (min-width: ${tablet}) {
       margin-bottom: 24px;
     }
+
+    @media screen and (min-width: ${desktop}) {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 36px;
+    }
   }
 
   @media screen and (min-width: ${tablet}) {
@@ -93,6 +110,13 @@ export const SecondTextBlock = styled.div`
     max-width: 269px;
     margin-bottom: 36px;
     line-height: 1.19;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 1.2;
+    max-width: 417px;
   }
 `;
 
@@ -149,6 +173,14 @@ export const AboutBlock = styled.div`
     &:last-of-type {
       align-items: flex-end;
       gap: 0px;
+
+      @media screen and (min-width: ${desktop}) {
+        gap: 24px;
+      }
     }
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    gap: 56px;
   }
 `;
