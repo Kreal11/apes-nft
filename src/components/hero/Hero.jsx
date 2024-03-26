@@ -55,35 +55,50 @@ const Hero = () => {
         </>
       )}
 
-      {isTablet && (
+      {(isTablet || isDesktop) && (
         <>
           <HeroHeadersWrapper>
             <h2>diD yOu seE iT ?</h2>
             <h2>Apes aRe eveRywhere</h2>
           </HeroHeadersWrapper>
           <h1>Yacht Apes</h1>
-          <picture>
-            <source srcSet={`${apeHeroTablet1x} 1x, ${apeHeroTablet2x} 2x`} />
-            <img src={apeHeroTablet1x} alt="Ape" />
-          </picture>
+          {isTablet && (
+            <picture>
+              <source srcSet={`${apeHeroTablet1x} 1x, ${apeHeroTablet2x} 2x`} />
+              <img src={apeHeroTablet1x} alt="Ape" />
+            </picture>
+          )}
+          {isDesktop && (
+            <picture>
+              <source
+                srcSet={`${apeHeroDesktop1x} 1x, ${apeHeroDesktop2x} 2x`}
+              />
+              <img src={apeHeroDesktop1x} alt="Ape" />
+            </picture>
+          )}
           <HeroDescrWrapper>
-            <h3>
-              <Span1>
-                Yacht Ape is a <br />
-              </Span1>
-              <Span2>collection of unique digital apes that you can</Span2>
-              <Span3>own in NFT format</Span3>
-            </h3>
+            {isTablet && (
+              <h3>
+                <Span1>
+                  Yacht Ape is a <br />
+                </Span1>
+                <Span2>collection of unique digital apes that you can</Span2>
+                <Span3>own in NFT format</Span3>
+              </h3>
+            )}
+            {isDesktop && (
+              <h3>
+                <Span1>
+                  Yacht Ape is a collection
+                  <br />
+                </Span1>
+                <Span2> of unique digital apes that you</Span2>
+                <Span3>can own in NFT format</Span3>
+              </h3>
+            )}
             <button onClick={scrollToMintSection}>Meet Apes</button>
           </HeroDescrWrapper>
         </>
-      )}
-
-      {isDesktop && (
-        <picture>
-          <source srcSet={`${apeHeroDesktop1x} 1x, ${apeHeroDesktop2x} 2x`} />
-          <img src={apeHeroDesktop1x} alt="Ape" />
-        </picture>
       )}
     </HeroWrapper>
   );

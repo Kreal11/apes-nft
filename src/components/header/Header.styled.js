@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const HeaderTag = styled.header`
   display: flex;
@@ -27,6 +27,16 @@ export const LogoNavLink = styled(NavLink)`
         fill: var(--default-color);
         ${({ $burger }) => $burger === "burger" && `fill: var(--accent-color)`};
       }
+    }
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    width: 72px;
+    height: 50px;
+
+    svg {
+      width: 72px;
+      height: 50px;
     }
   }
 `;
@@ -72,5 +82,14 @@ export const Button = styled.button`
       color: var(--default-color);
       text-decoration: underline;
     }
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.19;
+    border-bottom-left-radius: ${({ $isOpen }) => ($isOpen ? "0px" : "12px")};
+    border-top-left-radius: ${({ $isOpen }) => ($isOpen ? "0px" : "12px")};
+    padding: ${({ $isOpen }) => ($isOpen ? "30px 15px" : "30px 20px")};
   }
 `;

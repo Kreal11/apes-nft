@@ -2,10 +2,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet, mobile } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const Nav = styled.nav`
-  margin-top: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,6 +17,7 @@ export const Nav = styled.nav`
   font-style: normal;
 
   @media screen and (max-width: 767px) {
+    margin-top: 16px;
     gap: 16px;
   }
 
@@ -29,6 +29,14 @@ export const Nav = styled.nav`
     background-color: var(--bg-light-grey-color);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    right: 80px;
+    margin-top: 0px;
+    background-color: var(--bg-light-grey-color);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
   }
 `;
 
@@ -51,5 +59,12 @@ export const BurgerNavLink = styled(NavLink)`
       color: var(--default-color);
       text-decoration: underline;
     }
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    width: 80px;
+    height: 79px;
+    font-size: 16px;
+    line-height: 1.19;
   }
 `;
