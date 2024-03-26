@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const ArtWrapper = styled.div`
   max-width: 216px;
@@ -16,6 +16,11 @@ export const ArtWrapper = styled.div`
     ${({ $index }) => $index % 2 === 0 && $index <= 12 && "margin-left: auto;"}
   }
 
+  @media screen and (min-width: ${desktop}) {
+    max-width: 240px;
+    margin-left: 0;
+  }
+
   img {
     margin-bottom: 24px;
     width: 216px;
@@ -25,6 +30,12 @@ export const ArtWrapper = styled.div`
     @media screen and (min-width: ${tablet}) {
       width: 284px;
       height: 336px;
+      margin-bottom: 21px;
+    }
+
+    @media screen and (min-width: ${tablet}) {
+      width: 240px;
+      height: 280px;
       margin-bottom: 21px;
     }
   }
