@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-const { tablet } = breakpoints;
+const { tablet, desktop } = breakpoints;
 
 export const FooterTag = styled.footer`
   text-transform: uppercase;
@@ -19,5 +19,10 @@ export const FooterTag = styled.footer`
 
   @media screen and (min-width: ${tablet}) {
     margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    font-size: 16px;
+    line-height: 1.19;
   }
 `;
